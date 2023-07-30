@@ -2,6 +2,7 @@ package array1;
 
 public class Q1 {
     public static void main(String[] args) {
+        // TODO: return the sum of array
         int[] arr = {4, 3, 5, 6};
         System.out.println("Sum of Array: " + sumOfArray(arr));
     }
