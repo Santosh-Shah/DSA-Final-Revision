@@ -10,18 +10,16 @@ public class Q7 {
         System.out.println();
     }
     public static void main(String[] args) {
-        // TODO: swap all pairs with its alternative and then print all element
-        int[] arr = {1, 2, 3, 6, 8};
-        swapPairsAlternatives(arr);
-        printArray(arr);
+        // TODO: find unique elements
+        int[] arr = {5, 8, 5, 8, 4, 4, 1, 3, 3};
+        System.out.println("Unique element: " + findUniqueElement(arr));
     }
 
-    public static void swapPairsAlternatives(int[] arr) {
-        int temp;
-        for (int i = 0; i < arr.length - 1; i = i + 2) {
-            temp = arr[i];
-            arr[i] = arr[i + 1];
-            arr[i + 1] = temp;
+    public static int findUniqueElement(int[] arr) {
+        int sum = 0;
+        for (int j : arr) {
+            sum = sum ^ j;
         }
+        return sum;
     }
 }
