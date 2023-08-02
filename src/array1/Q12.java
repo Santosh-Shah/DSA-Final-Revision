@@ -11,20 +11,30 @@ public class Q12 {
     }
 
     public static void main(String[] args) {
-        // TODO: Find and return the total number of triples in the array/list which sum to target value.
-        int[] arr = {2, 3, 4, 5, 1};
-        System.out.println(pairSum(arr, 5));
+        // TODO: sort 0 1.
+        int[] arr = {1, 1, 0, 1, 0, 0, 1};
+        sortZeroOne(arr);
+        printArray(arr);
     }
 
-    public static int pairSum(int[] arr, int target) {
-        int count = 0;
-        for (int i = 0; i < arr.length - 1; i++) {
-            for(int j = i + 1; j < arr.length; j++) {
-                if (arr[i] + arr[j] == target) {
-                    count++;
-                }
+    public static void sortZeroOne(int[] arr) {
+        int start = 0;
+        int end = arr.length - 1;
+        while (start < end) {
+            while (arr[start] == 0 && start < end) {
+                start++;
+            }
+
+            while (arr[end] == 1 && start < end) {
+                end--;
+            }
+
+            if (start < end) {
+                arr[start] = 0;
+                arr[end] = 1;
+                start++;
+                end--;
             }
         }
-        return count;
     }
 }
