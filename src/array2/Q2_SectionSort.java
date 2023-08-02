@@ -11,6 +11,8 @@ public class Q2_SectionSort {
 
     // TODO: Main Function
     public static void main(String[] args) {
+        // Assume first value is minimum value every and start looking for other minimum
+        // value than first value, if found then swap otherwise leave as it.
         // TODO: Selection Sort
         int[] arr = {5, 60, 7, 8, 1, 10, 30};
         selectionSort(arr);
