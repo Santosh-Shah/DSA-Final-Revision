@@ -7,25 +7,41 @@ public class Q10_SortZeroOneTwo {
         }
     }
     public static void main(String[] args) {
-// TODO:        Q9) Check array rotation and return index where rotation starts
-        int[] arr = {5, 6, 1, 2, 3, 4};
-        System.out.println("Rotations starts from at index: " + checkArrayRotation(arr));
+// TODO:        Q10) Sort 0 1 2
+        int[] arr = {1, 0, 1, 2, 1, 2, 2, 0, 0, 1};
+        sortZeroOneTwo(arr);
+        printArray(arr);
     }
 
-    public static int checkArrayRotation(int[] arr) {
-        if (arr.length == 0) {
-            return 0;
-        }
-        int len = arr.length;
-        int index = 0;
-        int value = arr[0];
-        for (int i = 0; i < len; i++) {
-            if (value > arr[i]) {
-                index = i;
-                value = arr[i];
+    public static void sortZeroOneTwo(int[] arr) {
+        int countOnes = 0;
+        int countTwos = 0;
+        int countZeros = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 0) {
+                countZeros++;
+            }
+
+            if (arr[i] == 1) {
+                countOnes++;
+            }
+
+            if (arr[i] == 2) {
+                countTwos++;
             }
         }
 
-        return index;
+        for (int i = 0; i < countZeros; i++) {
+            arr[i] = 0;
+        }
+
+        for (int i = countZeros; i < (countZeros + countOnes); i++) {
+            arr[i] = 1;
+        }
+
+        for (int i = (countZeros + countOnes); i < arr.length; i++) {
+            arr[i] = 2;
+        }
     }
 }
