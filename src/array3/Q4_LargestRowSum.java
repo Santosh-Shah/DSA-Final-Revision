@@ -1,6 +1,6 @@
 package array3;
 
-public class Q3_LargestColumnSum {
+public class Q4_LargestRowSum {
     public static void main(String[] args) {
         //TODO: print largest column sum
         int[][] arr = {
@@ -9,16 +9,16 @@ public class Q3_LargestColumnSum {
                 {6, 9, 2}
         };
 
-        System.out.println("Largest column sum: " + largestColumnSum(arr));
+        System.out.println("Largest Row sum: " + largestColumnSum(arr));
     }
 
     public static int largestColumnSum(int[][] arr) {
         int rows = arr.length;
         int cols = arr[0].length;
         int largestSum = 0;
-        for (int j = 0; j < cols; j++) {
+        for (int i = 0; i < rows; i++) {
             int sum = 0;
-            for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
                 sum = sum + arr[i][j];
             }
             if (sum > largestSum) {
