@@ -4,7 +4,7 @@ import java.util.Enumeration;
 
 public class Q5_LargestRowOrColumnSum {
     public static void main(String[] args) {
-        //TODO: print largest column sum
+        //TODO: print largest Row or column sum
         int[][] arr = {
                 {1, 4, 5},
                 {2, 2, 4},

@@ -2,7 +2,7 @@ package array3;
 
 public class Q4_LargestRowSum {
     public static void main(String[] args) {
-        //TODO: print largest column sum
+        //TODO: print largest row sum
         int[][] arr = {
                 {1, 4, 5},
                 {2, 2, 4},

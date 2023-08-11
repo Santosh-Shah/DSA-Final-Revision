@@ -2,7 +2,7 @@ package array3;
 
 public class Q6_BoundriesAndDiagonalSum {
     public static void main(String[] args) {
-        //TODO: print largest column sum
+        //TODO: print sum of boundries and diagonals
         int[][] arr = {
                 {1, 3, 2},
                 {4, 5, 6},
