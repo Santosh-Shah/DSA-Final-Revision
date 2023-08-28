@@ -10,12 +10,16 @@ public class Main {
 //        String recOutput = rectangle.toString();
 //        System.out.println(recOutput);
 
-        Dog dog = new Dog("Tommy");
-        System.out.println(dog.getName());
-        dog.animalSound();
-
-        Cat cat = new Cat("Pisu");
-        System.out.println(cat.getName());
-        cat.animalSound();
+//        Dog dog = new Dog("Tommy");
+//        System.out.println(dog.getName());
+//        dog.animalSound();
+//
+//        Cat cat = new Cat("Pisu");
+//        System.out.println(cat.getName());
+//        cat.animalSound();
+        CalculateAnythingImpl calculate = new CalculateAnythingImpl();
+        System.out.println(calculate.addition(4, 10));
+        System.out.println(calculate.subtract(40, 10));
+        System.out.println(calculate.multiply(4, 10));
     }
 }
