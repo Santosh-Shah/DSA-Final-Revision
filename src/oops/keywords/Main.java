@@ -11,7 +11,9 @@ public class Main {
 //        System.out.println(test2.get());
 //        test2.get().display();
 
-        Test3 object = new Test3();
-        object.get();
+//        Test3 object = new Test3();
+//        object.get();
+
+        Maneesh maneesh = new Maneesh();
     }
 }
