@@ -1,4 +1,4 @@
-package recursion;
+package recursion.part1;
 
 public class Q9_CheckNum {
     public static void main(String[] args) {

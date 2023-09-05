@@ -1,4 +1,4 @@
-package recursion;
+package recursion.part1;
 
 public class Q6_FibonacciNumbers {
     // Iterative way

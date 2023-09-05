@@ -1,4 +1,4 @@
-package recursion;
+package recursion.part1;
 
 public class FindMin {
     public static int findMin(int[] A, int n) {

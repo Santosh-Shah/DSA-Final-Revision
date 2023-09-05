@@ -1,4 +1,4 @@
-package recursion;
+package recursion.part1;
 
 public class Q10_CheckSortedArrayOrNot {
     public static void main(String[] args) {

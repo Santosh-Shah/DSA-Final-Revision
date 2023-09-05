@@ -1,4 +1,4 @@
-package recursion;
+package recursion.part1;
 
 public class Q8_ArraySum {
     public static void main(String[] args) {

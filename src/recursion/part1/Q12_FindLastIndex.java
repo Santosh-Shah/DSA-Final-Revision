@@ -1,4 +1,4 @@
-package recursion;
+package recursion.part1;
 
 public class Q12_FindLastIndex {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package recursion;
+package recursion.part1;
 
 public class Q1_Factorial {
     // Iterative way to find factorial of n number
