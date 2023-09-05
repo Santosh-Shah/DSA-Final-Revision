@@ -1,6 +1,6 @@
 package recursion;
 
-public class Q4_PrintNNaturalNumber {
+public class Q5_PrintNNaturalNumber {
     // Recursive way
     public static void printNaturalNumber(int num) {
         // Base case
