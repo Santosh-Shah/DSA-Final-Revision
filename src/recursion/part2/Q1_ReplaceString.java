@@ -2,13 +2,13 @@ package recursion.part2;
 
 public class Q1_ReplaceString {
     public static void main(String[] args) {
-        System.out.println(replaceChar("abxdxcpx", 'x', 'y'));
+        System.out.println(replaceChar("xxabxdxcpx", 'x', 'y'));
     }
 
     // replace character with another character
     public static String replaceChar(String s, char a, char b) {
         // Base chase
-        if (s.length() == 0) {
+        if(s.length() == 0) {
             return s;
         }
 
@@ -18,5 +18,6 @@ public class Q1_ReplaceString {
         } else {
             return s.charAt(0) + smallOutput;
         }
+
     }
 }

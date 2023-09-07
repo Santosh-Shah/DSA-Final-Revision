@@ -27,7 +27,7 @@ public class StringBasics {
 
         String str = "College";
         System.out.println(str.length());
-        System.out.println(str.substring(1));
+        System.out.println(str.substring(2));
 
     }
 }
