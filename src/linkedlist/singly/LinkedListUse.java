@@ -1,5 +1,7 @@
 package linkedlist.singly;
 
+import java.util.HexFormat;
+
 public class LinkedListUse {
     // methods to use linked list for practice
     public static Node<Integer> createLinkedList() {
@@ -22,7 +24,21 @@ public class LinkedListUse {
 
         Node<Integer> temp = head;
         while (temp != null) {
-            System.out.println(temp.data);
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+//        System.out.println(head.data);
+//        System.out.println(head.next.next.next.data);
+//        System.out.println(head.next.next.next.next);
+    }
+
+    // Methods to increase all data
+    public static void increment(Node<Integer> head) {
+        Node<Integer> temp = head;
+        while (temp != null) {
+//            temp.data = temp.data + 1;   // either do like this
+            temp.data++; // Or like this
             temp = temp.next;
         }
     }
@@ -41,5 +57,8 @@ public class LinkedListUse {
 
         Node<Integer> head = createLinkedList();
         printNode(head);
+        increment(head);
+        printNode(head);
+
     }
 }
