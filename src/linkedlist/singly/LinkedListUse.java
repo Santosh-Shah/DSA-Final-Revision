@@ -1,8 +1,9 @@
 package linkedlist.singly;
 
 import java.util.HexFormat;
+import java.util.Scanner;
 
-public class LinkedListUse {
+public class LinkedListUse extends Q1_FindLengthOfLL {
     // methods to use linked list for practice
     public static Node<Integer> createLinkedList() {
         Node<Integer> n1 = new Node<>(10);
@@ -43,6 +44,28 @@ public class LinkedListUse {
         }
     }
 
+    // Method to take input
+    public static Node<Integer> takeInput() {
+        Scanner sc = new Scanner(System.in);
+        int data = sc.nextInt();
+        Node<Integer> head = null;
+        while (data != -1) {
+            Node<Integer> currentNode = new Node<>(data);
+            if (head == null) {
+                head = currentNode;
+            } else {
+                Node<Integer> tail = head;
+                while (tail.next != null) {
+                    tail = tail.next;
+                }
+                tail.next = currentNode;
+            }
+
+            data = sc.nextInt();
+        }
+        return head;
+    }
+
 
     public static void main(String[] args) {
 //        Node<Integer> n1 = new Node<>(50);
@@ -55,9 +78,12 @@ public class LinkedListUse {
 //        System.out.println(n2.data);
 //        System.out.println(n2.next);
 
-        Node<Integer> head = createLinkedList();
-        printNode(head);
-        increment(head);
+//        Node<Integer> head = createLinkedList();
+//        printNode(head);
+//        increment(head);
+//        printNode(head);
+
+        Node<Integer> head = takeInput();
         printNode(head);
 
     }
