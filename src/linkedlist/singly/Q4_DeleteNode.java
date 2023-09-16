@@ -2,7 +2,7 @@ package linkedlist.singly;
 
 import java.util.Scanner;
 
-public class Q3_InsertNode {
+public class Q4_DeleteNode {
     // Method to take input
     public static Node<Integer> takeInput() {
         Scanner sc = new Scanner(System.in);
@@ -50,16 +50,15 @@ public class Q3_InsertNode {
 //        System.out.println(head.next.next.next.next);
     }
 
-    // TODO: method to insert node at ith position
-    public static Node<Integer> insertNode(Node<Integer> head, int pos, int data) {
-        // data putting into node
-        Node<Integer> newNode = new Node<>(data);
+    // TODO: method to delete node at ith position
+    public static Node<Integer> deleteNode(Node<Integer> head, int pos) {
+        if (head == null) {
+            return head;
+        }
 
         // this will work only position is zero
         if (pos == 0) {
-            newNode.next = head;
-            head = newNode;
-            return head;
+            return head.next;
         }
 
         Node<Integer> temp = head;
@@ -69,12 +68,11 @@ public class Q3_InsertNode {
             count++;
         }
 
-        if (temp == null) {
+        if (temp == null && temp.next != null) {
             return head;
         }
 
-        newNode.next = temp.next;
-        temp.next = newNode;
+        temp.next = temp.next.next;
 
         return head;
     }
@@ -87,7 +85,7 @@ public class Q3_InsertNode {
         // insert node at ith position
         Node<Integer> head = takeInput();
         printNode(head);
-        head = insertNode(head, 4, 5);
+        head = deleteNode(head, 2);
         printNode(head);
 
     }
