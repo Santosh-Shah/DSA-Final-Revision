@@ -48,17 +48,24 @@ public class LinkedListUse extends Q1_FindLengthOfLL {
     public static Node<Integer> takeInput() {
         Scanner sc = new Scanner(System.in);
         int data = sc.nextInt();
-        Node<Integer> head = null;
+        Node<Integer> head = null, tail = null;
         while (data != -1) {
             Node<Integer> currentNode = new Node<>(data);
             if (head == null) {
                 head = currentNode;
+                tail = currentNode;
             } else {
-                Node<Integer> tail = head;
-                while (tail.next != null) {
-                    tail = tail.next;
-                }
+                // it is not optimized code
+//                Node<Integer> tail = head;
+//                while (tail.next != null) {
+//                    tail = tail.next;
+//                }
+//                tail.next = currentNode;
+
+                // it will take O(1) TC
                 tail.next = currentNode;
+                tail = tail.next;
+
             }
 
             data = sc.nextInt();
