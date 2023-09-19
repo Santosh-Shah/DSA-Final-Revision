@@ -55,6 +55,32 @@ public class Q13_ReverseLLRecursively {
         return smallHead;
     }
 
+    // TODO: Method to reverse LL in optimized way T(n) = 0(1)
+    private static DoubleNode reverseLLRecursivelyBetter(Node<Integer> head) {
+        // Base case
+        DoubleNode ans;
+        if (head == null || head.next == null) {
+            ans = new DoubleNode(head, head);
+//            ans.head = head;
+//            ans.tail = head;
+            return ans;
+        }
+
+        DoubleNode smallDoubleNode = reverseLLRecursivelyBetter(head.next);
+        smallDoubleNode.tail.next = head;
+        head.next = null;
+        ans = new DoubleNode();
+        ans.head = smallDoubleNode.head;
+        ans.tail = head;
+        return ans;
+    }
+
+    // TODO: you should call this function
+    public static Node<Integer> reverseLLRecursivelyBetterCall(Node<Integer> head) {
+        DoubleNode doubleNode = reverseLLRecursivelyBetter(head);
+        return doubleNode.head;
+    }
+
 
     // Main Method
     public static void main(String[] args) {
@@ -62,7 +88,8 @@ public class Q13_ReverseLLRecursively {
         // insert node at ith position
         Node<Integer> head = takeInput();
         printRecursively(head);
-        head = reverseLLRecursively(head);
+//        head = reverseLLRecursively(head);
+        head = reverseLLRecursivelyBetterCall(head);
         System.out.println();
         printRecursively(head);
 
