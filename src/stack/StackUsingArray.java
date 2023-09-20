@@ -9,29 +9,32 @@ public class StackUsingArray {
         topIndex = -1;
     }
 
+    public StackUsingArray(int size) {
+        data = new int[size];
+        topIndex = -1;
+    }
+
     // method to check size of stack
-    public int size() {
+    public int size() {                                 // T(n) = O(1)
         return topIndex + 1;
     }
 
     // method to check stack is empty or not
-    public boolean isEmpty() {
+    public boolean isEmpty() {                         // T(n) = O(1)
         return topIndex == -1;
     }
 
     // method to insert data
-    public void push(int elem) throws StackFullException {
+    public void push(int elem) throws StackFullException {                // T(n) = O(1)
         // if stack is full throw an exception
         if (topIndex == data.length - 1) {
-//            StackFullException ex = new StackFullException();
-//            throw ex;
             throw new StackFullException();
         }
         data[++topIndex] = elem;
     }
 
     // method to show top most element of the stack
-    public int top() throws StackEmptyException {
+    public int top() throws StackEmptyException {                         // T(n) = O(1)
         if (topIndex == -1) {
             throw new StackEmptyException();
         }
@@ -39,12 +42,12 @@ public class StackUsingArray {
     }
 
     // method to remove top most element of the stack
-    public int pop() throws StackEmptyException{
+    public int pop() throws StackEmptyException{               // T(n) = O(1)
         if (topIndex == -1) {
             throw new StackEmptyException();
         }
 
-        int temp = data[--topIndex];
+        int temp = data[topIndex--];
         return temp;
     }
 
