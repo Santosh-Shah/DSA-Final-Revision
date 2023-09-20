@@ -2,37 +2,42 @@ package stack;
 
 public class StackUsingLL<T> {
     private Node<T> head;
-    private Node<T> prev;
-    private int count = -1;
+    private int size;
 
     public StackUsingLL() {
         head = null;
+        size = 0;
     }
 
     public int size() {
-        return count + 1;
+        return size;
     }
 
     public boolean isEmpty() {
-        return count <= 0;
+        return size == 0;
     }
 
     public void push(T data) {
+        Node<T> newNode = new Node<>(data);
+        newNode.next = head;
+        head = newNode;
+        size++;
+    }
+
+    public T top() throws StackEmptyException {
         if (head == null) {
-            head = new Node<>(data);
-            prev = head;
-        } else {
-            head.next = new Node<>(data);
+            throw new StackEmptyException();
         }
+        return head.data;
+    }
+
+    public T pop() throws StackEmptyException{
+        if (head == null) {
+            throw new StackEmptyException();
+        }
+        T temp = head.data;
         head = head.next;
-        count++;
-    }
-
-    public Node<T> top() {
-        return head;
-    }
-
-    public T pop() {
-
+        size--;
+        return temp;
     }
 }
