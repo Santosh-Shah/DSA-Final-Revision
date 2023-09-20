@@ -28,9 +28,19 @@ public class StackUsingArray {
     public void push(int elem) throws StackFullException {                // T(n) = O(1)
         // if stack is full throw an exception
         if (topIndex == data.length - 1) {
-            throw new StackFullException();
+//            throw new StackFullException();
+//            data = new int[data.length * 2];   or do this
+            doubleCapacity();
         }
         data[++topIndex] = elem;
+    }
+
+    private void doubleCapacity() {
+        int[] temp = data;
+        data = new int[temp.length * 2];
+            for (int i = 0; i < temp.length; i++) {
+            data[i] = temp[i];
+        }
     }
 
     // method to show top most element of the stack
