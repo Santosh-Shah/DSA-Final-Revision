@@ -3,7 +3,9 @@ package queue;
 public class QueueUse {
     public static void main(String[] args) throws QueueFullException, QueueEmptyException {
 //        QueueUsingArray queue = new QueueUsingArray();
-        QueueUsingLL queue = new QueueUsingLL();
+//        QueueUsingLL queue = new QueueUsingLL();
+        QueueUsingTwoStacks queue = new QueueUsingTwoStacks();
+
 //        queue.enqueue(5);
 //        queue.enqueue(10);
 //        System.out.println(queue.front());
@@ -28,6 +30,7 @@ public class QueueUse {
         System.out.println(queue.front());
         System.out.println(queue.dequeue());
         System.out.println(queue.front());
+        System.out.println(queue.size());
 
 
 //        System.out.println();
