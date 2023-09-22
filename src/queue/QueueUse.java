@@ -14,18 +14,19 @@ public class QueueUse {
 //        System.out.println(queue.size());
 //        System.out.println(queue.dequeue());
 
-        int[] data = {1, 2, 3, 4, 5};
+        int[] data = {1, 2, 3, 4, 5, 6};
         for (int ans : data) {
             queue.enqueue(ans);
         }
 
+//        System.out.println(queue.size());
         while (!queue.isEmpty()) {
             System.out.print(queue.dequeue() + " ");
         }
 
-        System.out.println();
-        System.out.println(queue.isEmpty());
-        System.out.println(queue.size());
+//        System.out.println();
+//        System.out.println(queue.isEmpty());
+//        System.out.println(queue.size());
 
 
     }
