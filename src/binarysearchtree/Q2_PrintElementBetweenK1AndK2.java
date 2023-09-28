@@ -4,7 +4,7 @@ import binarytree.BinaryTreeNode;
 
 import java.util.Scanner;
 
-public class Q1_SearchNodeInBST {
+public class Q2_PrintElementBetweenK1AndK2 {
     public static void main(String[] args) {
 //        BinaryTreeNode<Integer> root = takeInputBetter(true, 0, false);
         int[] inOrder = {1, 2, 3, 4, 5, 6, 7};
@@ -12,25 +12,38 @@ public class Q1_SearchNodeInBST {
         BinaryTreeNode<Integer> root = buildTree(preOrder, inOrder);
 
 //        printDetailed(root);
-        System.out.println(searchNode(root, 5));
+        printElementBetweenK1AndK2(root, 3, 7);
     }
 
-    // TODO: method to search node in BST
-    public static boolean searchNode(BinaryTreeNode<Integer> root, int target) {
+    // TODO: method to print element between k1 and k2
+    public static void printElementBetweenK1AndK2(BinaryTreeNode<Integer> root, int k1, int k2) {
         // Base case
         if (root == null) {
-            return false;
+            return;
         }
 
-        if (root.data == target) {
-            return true;
+        if (root.data > k1) {
+            printElementBetweenK1AndK2(root.left, k1, k2);
         }
 
-        if (target < root.data) {
-            return searchNode(root.left, target);
-        } else {
-            return searchNode(root.right, target);
+        if (root.data >= k1 && root.data <= k2) {
+            System.out.print(root.data + " ");
         }
+
+        if (root.data <= k2) {
+            printElementBetweenK1AndK2(root.right, k1, k2);
+        }
+
+//        if (root.data < k1) {
+//            printElementBetweenK1AndK2(root.right, k1, k2);
+//        } else if (root.data > k2) {
+//            printElementBetweenK1AndK2(root.left, k1, k2);
+//        } else {
+//            System.out.print(root.data + " ");
+//            printElementBetweenK1AndK2(root.left, k1, k2);
+//            printElementBetweenK1AndK2(root.right, k1, k2);
+//        }
+
     }
 
     // method to build tree using pre_order and in_order
