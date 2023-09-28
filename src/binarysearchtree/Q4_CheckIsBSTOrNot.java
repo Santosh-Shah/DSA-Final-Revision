@@ -1,18 +1,83 @@
-package binarytree;
+package binarysearchtree;
+
+import binarytree.BinaryTreeNode;
 
 import java.util.Scanner;
 
-public class Q18_BuildTreeUsingPreOrderAndInOrder {
+public class Q4_CheckIsBSTOrNot {
     public static void main(String[] args) {
 //        BinaryTreeNode<Integer> root = takeInputBetter(true, 0, false);
-        int[] inOrder = {4, 2, 5, 1, 6, 3, 7};
-        int[] preOrder = {10, 2, 4, 5, 3, 6, 7};
-        BinaryTreeNode<Integer> root = buildTree(preOrder, inOrder);
+//        int[] inOrder = {1, 2, 3, 4, 5, 6, 7};
+//        int[] preOrder = {4, 2, 1, 3, 6, 5, 7};
+//        BinaryTreeNode<Integer> root = buildTree(preOrder, inOrder);
+
+        int[] arr = {10, 2, 3, 4, 5, 6, 7};
+        BinaryTreeNode<Integer> root = sortedArrayToBST(arr);
+
         printDetailed(root);
-//        printLevelWise(root);
+        System.out.println(isBST(root));
+
     }
 
-    // TODO: method to build tree using pre_order and in_order
+    // TODO: method to check binary tree is BST or not
+    public static boolean isBST(BinaryTreeNode<Integer> root) {
+        if (root == null) {
+            return true;
+        }
+
+        int leftMax = maximum(root.left);
+        if (leftMax >= root.data) {
+            return false;
+        }
+
+        int rightMin = minimum(root.right);
+        if (rightMin < root.data) {
+            return false;
+        }
+
+        boolean isLeftBST = isBST(root.left);
+        boolean isRightBST = isBST(root.right);
+
+        return isLeftBST && isRightBST;
+    }
+
+    private static int maximum(BinaryTreeNode<Integer> root) {
+        if (root == null) {
+            return Integer.MIN_VALUE;
+        }
+
+        int leftMax = maximum(root.left);
+        int rightMax = maximum(root.right);
+        return Math.max(root.data, Math.max(leftMax, rightMax));
+    }
+
+    private static int minimum(BinaryTreeNode<Integer> root) {
+        if (root == null) {
+            return Integer.MAX_VALUE;
+        }
+
+        int leftMin = minimum(root.left);
+        int rightMin = minimum(root.right);
+        return Math.min(root.data, Math.min(leftMin, rightMin));
+    }
+
+    public static BinaryTreeNode<Integer> sortedArrayToBST(int[] arr) {
+        return sortedArrayToBST(arr, 0, arr.length - 1);
+    }
+
+    private static BinaryTreeNode<Integer> sortedArrayToBST(int[] arr, int si, int ei) {
+        if (si > ei) {
+            return null;
+        }
+
+        int mid = (ei + si) / 2;
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(arr[mid]);
+        root.left = sortedArrayToBST(arr, si, mid - 1);
+        root.right = sortedArrayToBST(arr, mid + 1, ei);
+        return root;
+    }
+
+    // method to build tree using pre_order and in_order
     public static BinaryTreeNode<Integer> buildTree(int[] pre, int[] in) {
         BinaryTreeNode<Integer> root = buildTreeFromPreInHelper(pre, in, 0, pre.length - 1, 0, in.length - 1);
         return root;
@@ -61,6 +126,7 @@ public class Q18_BuildTreeUsingPreOrderAndInOrder {
         return root;
     }
 
+    // method to take input in better way
     public static BinaryTreeNode<Integer> takeInputBetter(boolean isRoot, int parentData, boolean isLeft) {
         if (isRoot) {
             System.out.println("Enter root data: ");
@@ -105,5 +171,4 @@ public class Q18_BuildTreeUsingPreOrderAndInOrder {
         printDetailed(root.left);
         printDetailed(root.right);
     }
-
 }
