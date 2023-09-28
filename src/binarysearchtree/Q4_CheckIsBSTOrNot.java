@@ -11,12 +11,62 @@ public class Q4_CheckIsBSTOrNot {
 //        int[] preOrder = {4, 2, 1, 3, 6, 5, 7};
 //        BinaryTreeNode<Integer> root = buildTree(preOrder, inOrder);
 
-        int[] arr = {10, 2, 3, 4, 5, 6, 7};
+        int[] arr = {10, 2, 3, 4, 5, 6, 70};
         BinaryTreeNode<Integer> root = sortedArrayToBST(arr);
 
         printDetailed(root);
-        System.out.println(isBST(root));
+//        System.out.println(isBST(root));
+//        System.out.println(isBST2(root).isBST + "max: " + isBST2(root).max + "min: " + isBST2(root).min);
+        System.out.println(isBST3(root, Integer.MIN_VALUE, Integer.MAX_VALUE));
 
+    }
+
+    // TODO: more optimized method to check binary tree is BST or Not
+    public static boolean isBST3(BinaryTreeNode<Integer> root, int minRange, int maxRange) {
+        if (root == null) {
+            return true;
+        }
+
+        if (root.data < minRange || root.data > maxRange) {
+            return false;
+        }
+
+        boolean isLeftWithinRange = isBST3(root.left, minRange, root.data - 1);
+        boolean isRightWithinRange = isBST3(root.right, root.data, maxRange);
+        return isRightWithinRange && isLeftWithinRange;
+    }
+
+    // TODO: optimized method to check binary tree is BST or Not
+    public static IsBSTReturn isBST2(BinaryTreeNode<Integer> root) {
+        if (root == null) {
+            IsBSTReturn ans = new IsBSTReturn(Integer.MAX_VALUE, Integer.MIN_VALUE, true);
+            return ans;
+        }
+
+        IsBSTReturn leftAns = isBST2(root.left);
+        IsBSTReturn rightAns = isBST2(root.right);
+        int min = Math.min(root.data, Math.min(leftAns.min, rightAns.min));
+        int max = Math.max(root.data, Math.max(leftAns.max, rightAns.max));
+        boolean isBST = true;
+
+        if (leftAns.max >= root.data) {
+            isBST = false;
+        }
+
+        if (rightAns.min < root.data) {
+            isBST = false;
+        }
+
+        if (!leftAns.isBST) {
+            isBST = false;
+        }
+
+        if (!rightAns.isBST) {
+            isBST = false;
+        }
+
+        IsBSTReturn ans = new IsBSTReturn(min, max, isBST);
+        return ans;
     }
 
     // TODO: method to check binary tree is BST or not
