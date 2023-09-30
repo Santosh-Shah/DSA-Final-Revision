@@ -11,7 +11,7 @@ public class Q4_CheckIsBSTOrNot {
 //        int[] preOrder = {4, 2, 1, 3, 6, 5, 7};
 //        BinaryTreeNode<Integer> root = buildTree(preOrder, inOrder);
 
-        int[] arr = {10, 2, 3, 4, 5, 6, 70};
+        int[] arr = {1, 2, 3, 4, 5, 6, 70};
         BinaryTreeNode<Integer> root = sortedArrayToBST(arr);
 
         printDetailed(root);
