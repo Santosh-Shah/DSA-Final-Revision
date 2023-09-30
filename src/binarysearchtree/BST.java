@@ -1,7 +1,5 @@
 package binarysearchtree;
 
-import binarytree.BinaryTreeNode;
-
 public class BST {
     private BinaryTreeNode<Integer> root;
     private int size;
@@ -33,6 +31,7 @@ public class BST {
     // insert data
     public void insert(int x) {
         root = insert(root, x);
+        size++;
     }
 
     private static BinaryTreeNode<Integer> insert(BinaryTreeNode<Integer> root, int x) {
@@ -53,11 +52,72 @@ public class BST {
 
     // delete data
     public boolean deleteData(int x) {
-        return false;
+        BSTDeleteReturn output = deleteDataHelper(root, x);
+        root = output.root;
+        if (output.deleted) {
+            size--;
+        }
+        return output.deleted;
+    }
+
+    public static BSTDeleteReturn deleteDataHelper(BinaryTreeNode<Integer> root, int x) {
+        if (root == null) {
+            return new BSTDeleteReturn(null, false);
+        }
+
+        if (root.data < x) {
+            BSTDeleteReturn outputRight = deleteDataHelper(root.right, x);
+            root.right = outputRight.root;
+            outputRight.root = root;
+            return outputRight;
+        }
+
+        if (root.data > x) {
+            BSTDeleteReturn outputLeft = deleteDataHelper(root.left, x);
+            root.left = outputLeft.root;
+            outputLeft.root = root;
+            return outputLeft;
+        }
+
+        // 0 children
+        if (root.left == null && root.right == null) {
+            return new BSTDeleteReturn(null, true);
+        }
+
+        // only left child
+        if (root.left != null && root.right == null) {
+            return new BSTDeleteReturn(root.left, true);
+        }
+
+        // only right child
+        if (root.left == null && root.right != null) {
+            return new BSTDeleteReturn(root.right, true);
+        }
+
+        // both children are present
+        int rightMax = minimum(root.right);
+        root.data = rightMax;
+        BSTDeleteReturn outputRight = deleteDataHelper(root.right, rightMax);
+        root.right = outputRight.root;
+        return new BSTDeleteReturn(root, true);
+    }
+
+
+    private static int minimum(BinaryTreeNode<Integer> root) {
+        if (root == null) {
+            return Integer.MAX_VALUE;
+        }
+
+        int leftMin = minimum(root.left);
+        int rightMin = minimum(root.right);
+        return Math.min(root.data, Math.min(leftMin, rightMin));
     }
 
     // return size
     public int size() {
+        if (root == null) {
+            return 0;
+        }
         return size;
     }
 
