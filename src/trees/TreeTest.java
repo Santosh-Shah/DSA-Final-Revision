@@ -21,5 +21,16 @@ public class TreeTest {
         // adding 5 and 6 to node2
         node2.children.add(node4);
         node2.children.add(node5);
+
+        printTree(root);
+    }
+
+    // TODO: method to print generic tree
+    public static void printTree(TreeNode<Integer> root) {
+        System.out.print(root.data + " ");
+        for (int i = 0; i < root.children.size(); i++) {
+            TreeNode<Integer> child = root.children.get(i);
+            printTree(child);
+        }
     }
 }
