@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class Q3_TakeInputLevelWise {
+public class Q4_TakeInputLevelWise {
     public static void main(String[] args) {
 
         TreeNode<Integer> root = takeInputLevelWise();
