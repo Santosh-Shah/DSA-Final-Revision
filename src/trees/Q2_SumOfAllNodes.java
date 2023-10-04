@@ -1,6 +1,6 @@
 package trees;
 
-public class Q1_SumOfAllNodes {
+public class Q2_SumOfAllNodes {
     public static void main(String[] args) {
 //        TreeNode<Integer> tree = new TreeNode<>(10);
 //        System.out.println(tree.data);
