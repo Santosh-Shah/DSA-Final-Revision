@@ -1,5 +1,8 @@
 package hashmaps;
 
+import oops.polymorphism.A;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -44,6 +47,11 @@ public class Main {
         for (String ans : keys) {
             System.out.print(ans + " ");
         }
+
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Santosh");
+        list.add("Hariom");
+        System.out.println(list.get(1));
 
     }
 }
