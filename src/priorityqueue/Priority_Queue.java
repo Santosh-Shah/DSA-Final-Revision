@@ -13,8 +13,11 @@ public class Priority_Queue<T> {
 
     }
 
-    public T getMin() {
-
+    public T getMin() throws PriorityQueueException{
+        if (heap.size() == 0) {
+            throw new PriorityQueueException();
+        }
+        return heap.get(0).value;
     }
 
     public T removeMin() {
@@ -22,10 +25,13 @@ public class Priority_Queue<T> {
     }
 
     public int size() {
-
+        return heap.size();
     }
 
     public boolean isEmpty() {
-
+        if (heap.size() == 0) {
+            return true;
+        }
+        return false;
     }
 }
