@@ -18,6 +18,7 @@ public class Trie {
         if (child == null) {
             child = new TrieNode(word.charAt(0));
             root.children[childIndex] = child;
+            root.childCount++;
         }
         addHelper(child, word.substring(1));
     }
@@ -61,5 +62,9 @@ public class Trie {
         }
 
         removeHelper(child, word.substring(1));
+        if (!root.isTerminal && child.childCount == 0) {
+            root.children[childIndex] = null;
+            root.childCount--;
+        }
     }
 }

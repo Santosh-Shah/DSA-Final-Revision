@@ -5,7 +5,7 @@ public class TrieTest {
         Trie t = new Trie();
         t.add("NOTE");
         t.add("HELLO");
-        t.remove("NOT");
+        t.remove("NOTE");
         System.out.println(t.search("NOTE"));
     }
 }
