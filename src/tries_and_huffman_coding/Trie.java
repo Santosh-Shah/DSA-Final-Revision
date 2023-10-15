@@ -43,4 +43,23 @@ public class Trie {
         }
         return searchHelper(child, word.substring(1));
     }
+
+    public void remove(String word) {
+        removeHelper(root, word);
+    }
+
+    private void removeHelper(TrieNode root, String word) {
+        if (word.length() == 0) {
+                root.isTerminal = false;
+                return;
+        }
+
+        int childIndex = word.charAt(0) - 'A';
+        TrieNode child = root.children[childIndex];
+        if (child == null) {
+            return;
+        }
+
+        removeHelper(child, word.substring(1));
+    }
 }
