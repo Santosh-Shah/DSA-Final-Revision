@@ -2,7 +2,7 @@ package dynamicprogramming;
 
 public class Q6_MinSquareForN {
     public static void main(String[] args) {
-        System.out.println(minSquares(5));
+        System.out.println(minSquares(12));
     }
 
     public static int minSquares(int n) {
