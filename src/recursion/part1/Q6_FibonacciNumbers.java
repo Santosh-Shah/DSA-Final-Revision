@@ -8,37 +8,37 @@ public class Q6_FibonacciNumbers {
             return;
         }
 
-        int a = 1;
-        int b = 1;
-        int ans = 0;
-        System.out.println(a);
-        System.out.println(b);
-        int i = 3;
-//        for (int i = 3; i <= num; i++) {
-//            ans = a + b;
-//            a = b;
-//            b = ans;
-//            System.out.println(b);
-//        }
-        while (i <= num) {
-            ans = a + b;
-            a = b;
-            b = ans;
-            System.out.println(b);
-            i++;
+        int first = 0;
+        int second = 1;
+
+        System.out.print("Fibonacci Series up to " + num + " numbers: ");
+
+        for (int i = 0; i < num; i++) {
+            System.out.print(first + " ");
+
+            int next = first + second;
+            first = second;
+            second = next;
         }
 
     }
 
     // Recursive way
     public static void fibonacciNumberRecursively(int num) {
+        for (int i = 0; i < num; i++) {
+            System.out.print(helperFunction(i) + " ");
+        }
+    }
+    private static int helperFunction(int num) {
         // Base case
+        if (num <= 1) {
+            return num;
+        }
 
+        return helperFunction(num - 1) + helperFunction(num - 2);
     }
     public static void main(String[] args) {
-        fibonacciNumberIteratively(5);
-
-//        int[] arr = new int[5];
-//        System.out.println(arr.length);
+//        fibonacciNumberIteratively(5);
+        fibonacciNumberRecursively(5);
     }
 }
