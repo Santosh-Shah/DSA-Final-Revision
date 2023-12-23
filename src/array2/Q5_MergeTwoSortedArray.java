@@ -7,6 +7,7 @@ public class Q5_MergeTwoSortedArray {
         }
     }
     public static void main(String[] args) {
+        // TODO: Merge two sorted array
         int[] arr1 = {1, 3, 7, 9, 11, 12, 45};
         int[] arr2 = {2, 4, 6, 10, 13, 50};
         int[] ansArray = mergeTwoSortedArray(arr1, arr2);

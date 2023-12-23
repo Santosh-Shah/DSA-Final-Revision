@@ -2,7 +2,7 @@ package array3;
 
 public class Q8_PrintSpiral {
     public static void main(String[] args) {
-        //TODO: print largest column sum
+        //TODO: print spiral
         int[][] arr = {
                 {1, 3, 2},
                 {4, 5, 6},
