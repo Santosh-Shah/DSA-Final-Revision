@@ -2,22 +2,19 @@ package revision_once.patterns;
 
 import java.util.Scanner;
 
-public class Q1 {
+public class Q2 {
     public static void main(String[] args) {
-        // TODO: Printing Basic Pattern
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter No. :- ");
         int num = sc.nextInt();
 
-        // Outer loop for row
+        // outer loop represents row
         for (int i = 0; i < num; i++) {
-            // Inner loop for column
-            for (int j = 0; j < num; j++) {
-                System.out.print("*");
+            // inner loop represents column
+            for (int j = 5; j >= 1; j--) {
+                System.out.print(j + " ");
             }
-            // It will beak the line
             System.out.println();
         }
-
     }
 }
