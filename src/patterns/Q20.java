@@ -5,6 +5,14 @@ import java.util.Scanner;
 public class Q20 {
     public static void main(String[] args) {
         //TODO: Basic Inverted Triangle Patterns
+//        Enter the number: 5
+//                * * * * *
+//                * * * *
+//                * * *
+//                * *
+//                *
+
+
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the number: ");
         int n = sc.nextInt();

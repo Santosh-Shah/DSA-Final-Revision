@@ -5,6 +5,13 @@ import java.util.Scanner;
 public class Q21 {
     public static void main(String[] args) {
         //TODO: Basic Isosceles Triangle Patterns
+//        Enter the number: 4
+//              1
+//            1 2 1
+//          1 2 3 2 1
+//        1 2 3 4 3 2 1
+
+
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the number: ");
         int n = sc.nextInt();

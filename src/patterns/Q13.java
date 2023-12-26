@@ -5,6 +5,12 @@ import java.util.Scanner;
 public class Q13 {
     public static void main(String[] args) {
         //TODO: Basic Triangle Patterns
+//        Enter the number: 4
+//        A
+//        B B
+//        C C C
+//        D D D D
+
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the number: ");
         int n = sc.nextInt();

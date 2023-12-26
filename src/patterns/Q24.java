@@ -5,6 +5,11 @@ import java.util.Scanner;
 public class Q24 {
     public static void main(String[] args) {
         //TODO: Basic Diamond of stars Patterns
+//             4
+//                *
+//               ***
+//                *
+
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int firstHalf = (n + 1) / 2;

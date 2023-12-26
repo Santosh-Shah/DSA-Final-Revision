@@ -5,6 +5,12 @@ import java.util.Scanner;
 public class Q18 {
     public static void main(String[] args) {
         //TODO: Basic Triangle Mirror Image Patterns
+//        Enter the number: 4
+//              *
+//            * *
+//          * * *
+//        * * * *
+
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the number: ");
         int n = sc.nextInt();
