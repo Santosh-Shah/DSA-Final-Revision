@@ -4,8 +4,6 @@ public class Q8_FindDuplicateElements {
     public static void main(String[] args) {
         int[] arr = {5, 6, 7, 12, 10, 11, 12};
         System.out.println("duplicate: " + findDuplicate(arr));
-
-
     }
 
     public static int findDuplicate(int[] arr) {
