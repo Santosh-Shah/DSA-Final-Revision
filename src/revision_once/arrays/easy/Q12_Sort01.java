@@ -4,14 +4,38 @@ public class Q12_Sort01 {
     public static void main(String[] args) {
         // TODO: sort 0 1.
         int[] arr = {1, 1, 0, 1, 0, 0, 1};
-        sortZeroOne(arr);
+//        sortZeroOne(arr);
+        sortZeroOneBetter(arr);
         printArray(arr);
+    }
+
+    public static int[] sortZeroOneBetter(int[] arr) {
+        int start = 0;
+        int end = arr.length - 1;
+
+        while (start < end) {
+            while (arr[start] == 0 && start < end) {
+                start++;
+            }
+
+            while (arr[end] == 1 && start < end) {
+                end--;
+            }
+
+            if (start < end) {
+                arr[start] = 0;
+                arr[end] = 1;
+                start++;
+                end--;
+            }
+        }
+        return arr;
     }
 
     public static int[] sortZeroOne(int[] arr) {
         int len = arr.length;
         int zerosCount = zeroCount(arr);
-        int onesCount = oneCount(arr);
+//        int onesCount = oneCount(arr);
 
         int i = 0;
         while (i < zerosCount) {
