@@ -2,7 +2,7 @@ package revision_once.arrays.hard;
 
 import java.util.Scanner;
 
-public interface Q1_TakeInputAndPrintIn2DArray {
+public class Q1_TakeInputAndPrintIn2DArray {
     public static void main(String[] args) {
         int[][] arr = takeInput();
         printArray(arr);
