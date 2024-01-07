@@ -1,19 +1,18 @@
-package array2;
+package revision_once.arrays.medium;
 
 public class Q4_InsertionSort {
-    public static void printArray(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
-    }
     public static void main(String[] args) {
-        //TODO: Insertion Sort
-        int[] arr = {1, 4, 6, 8, 2, 90};
+        // TODO: Bubble Sort
+        int[] arr = {50, 6, 7, 2, 11, 8, 10, 30};
         insertionSort(arr);
         printArray(arr);
     }
 
     public static void insertionSort(int[] arr) {
+        if (arr == null) {
+            return;
+        }
+
         for (int i = 1; i < arr.length; i++) {
             int j = i - 1;
             int temp = arr[i];
@@ -21,7 +20,15 @@ public class Q4_InsertionSort {
                 arr[j + 1] = arr[j];
                 j--;
             }
+
             arr[j + 1] = temp;
+        }
+    }
+
+
+    public static void printArray(int[] arr) {
+        for (int output : arr) {
+            System.out.print(output + " ");
         }
     }
 }
