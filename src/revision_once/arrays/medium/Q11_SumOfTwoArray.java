@@ -1,4 +1,4 @@
-package array2;
+package revision_once.arrays.medium;
 
 public class Q11_SumOfTwoArray {
     public static void printArray(int[] arr) {
@@ -40,13 +40,13 @@ public class Q11_SumOfTwoArray {
         }
 
         while (j >= 0) {
-            int sum = arr2[j] + carry;
+            int sum = arr1[j] + carry;
             output[k] = sum % 10;
             carry = sum / 10;
             j--;
             k--;
         }
 
-        output[0] = carry;
+        output[k] = carry;
     }
 }
