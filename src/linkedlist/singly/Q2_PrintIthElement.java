@@ -1,7 +1,7 @@
 package linkedlist.singly;
 
 public class Q2_PrintIthElement {
-    // methods to use linked list for practice
+    // methods to use a linked list for practice
     public static Node<Integer> createLinkedList() {
         Node<Integer> n1 = new Node<>(10);
         Node<Integer> n2 = new Node<>(20);

@@ -34,7 +34,7 @@ public class Q1_FindLengthOfLL {
         System.out.println(lengthOfLL(head));
     }
 
-    // Method to find length of linked list
+    // Method to find length of a linked list
     public static int lengthOfLL(Node<Integer> head) {
         //Base case
         if (head == null) {
