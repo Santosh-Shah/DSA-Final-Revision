@@ -1,4 +1,4 @@
-package array3;
+package revision_once.arrays.hard;
 
 public class Q7_PrintLikeWave {
     public static void main(String[] args) {
@@ -18,11 +18,6 @@ public class Q7_PrintLikeWave {
     public static void printLikeWave(int[][] arr) {
         int row = arr.length;
         int colm = arr[0].length;
-
-        // base case check
-        if (row == 0) {
-            return;
-        }
 
         for (int j = 0; j < colm; j++) {
             if (j % 2 == 0) {
