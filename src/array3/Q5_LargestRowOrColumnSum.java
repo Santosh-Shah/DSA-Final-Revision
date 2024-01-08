@@ -7,8 +7,8 @@ public class Q5_LargestRowOrColumnSum {
         //TODO: print largest Row or column sum
         int[][] arr = {
                 {1, 4, 5},
-                {2, 2, 4},
-                {6, 9, 2}
+                {20, 20, 40},
+                {6, 900, 2}
         };
 
         largestRowOrColumnSum(arr);
@@ -26,7 +26,7 @@ public class Q5_LargestRowOrColumnSum {
             return;
         }
 
-        // it will find largest row sum
+        // it will find a largest row sum
         for (int i = 0; i < rows; i++) {
             int sum = 0;
             for (int j = 0; j < cols; j++) {
