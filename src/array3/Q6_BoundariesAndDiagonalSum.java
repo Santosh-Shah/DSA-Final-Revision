@@ -1,6 +1,6 @@
 package array3;
 
-public class Q6_BoundriesAndDiagonalSum {
+public class Q6_BoundariesAndDiagonalSum {
     public static void main(String[] args) {
         //TODO: print sum of boundaries and diagonals
         int[][] arr = {
