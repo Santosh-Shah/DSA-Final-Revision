@@ -1,40 +1,40 @@
 package revision_once.linkedlists.singly;
 
-public class Q3_InsertNode {
+public class Q4_DeleteNode {
     public static void main(String[] args) {
         Node<Integer> head = createLL();
         printLL(head);
-        System.out.println("\nAfter inserting new node");
-        head = insertNode(head, 5, 8);
+        System.out.println("\nAfter deleting node");
+        head = deleteNode(head, 5);
         printLL(head);
 
     }
 
     //TODO: Insert node at ith position
-    public static Node<Integer> insertNode(Node<Integer> head, int pos, int data) {
+    public static Node<Integer> deleteNode(Node<Integer> head, int pos) {
         // Base case
         if (head == null) {
             return null;
         }
 
         Node<Integer> temp = head;
-        Node<Integer> newNode = new Node<>(data);
 
         // if you want to add at first position
         if (pos == 0) {
-            newNode.next = head;
-            head = newNode;
-            return head;
+            return head.next;
         }
 
         int index = pos;
-        while (index != 1) {
+        while (index != 1 && temp != null) {
             temp = temp.next;
             index--;
         }
 
-        newNode.next = temp.next;
-        temp.next = newNode;
+        if (temp == null) {
+            return head;
+        }
+
+        temp.next = temp.next.next;
         return head;
     }
 

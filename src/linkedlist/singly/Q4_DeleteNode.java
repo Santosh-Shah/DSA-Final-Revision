@@ -85,7 +85,7 @@ public class Q4_DeleteNode {
         // insert node at ith position
         Node<Integer> head = takeInput();
         printNode(head);
-        head = deleteNode(head, 2);
+        head = deleteNode(head, 5);
         printNode(head);
 
     }
