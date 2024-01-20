@@ -70,38 +70,13 @@ public class Q5_FindNode {
         }
         return -1;
     }
-    public static Node<Integer> deleteNode(Node<Integer> head, int pos) {
-        if (head == null) {
-            return head;
-        }
-
-        // this will work only position is zero
-        if (pos == 0) {
-            return head.next;
-        }
-
-        Node<Integer> temp = head;
-        int count = 0;
-        while (count != pos - 1 && temp != null) {
-            temp = temp.next;
-            count++;
-        }
-
-        if (temp == null && temp.next != null) {
-            return head;
-        }
-
-        temp.next = temp.next.next;
-
-        return head;
-    }
 
 
 
     // Main Method
     public static void main(String[] args) {
 
-        // insert node at ith position
+        // Find Node
         Node<Integer> head = takeInput();
         printNode(head);
         System.out.println("Index: " + findNode(head, 5));
