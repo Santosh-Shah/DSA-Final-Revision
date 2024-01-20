@@ -1,38 +1,22 @@
 package revision_once.linkedlists.singly;
 
-public class Q6_AppendLastToFirst {
+public class Q7_PrintReverse {
     public static void main(String[] args) {
         Node<Integer> head = createLL();
         printLL(head);
         System.out.println();
-        head = appendLastToFirst(head, 2);
-        printLL(head);
+        printReverse(head);
 
     }
 
-    public static Node<Integer> appendLastToFirst(Node<Integer> head, int num) {
+    public static void printReverse(Node<Integer> head) {
         // Base Case
-        if (num == 0 || head == null) {
-            return null;
+        if (head == null) {
+            return;
         }
-
-        Node<Integer> fast = head;
-        Node<Integer> slow = head;
-        for (int i = 0; i < num; i++) {
-            fast = fast.next;
-        }
-
-        while (fast.next != null) {
-            slow = slow.next;
-            fast = fast.next;
-        }
-
-        Node<Integer> temp = slow.next;
-        slow.next = null;
-        fast.next = head;
-        head = temp;
-
-        return head;
+        Node<Integer> temp = head;
+        printReverse(temp.next);
+        System.out.print(temp.data + " ");
     }
 
     public static Node<Integer> createLL() {
