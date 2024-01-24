@@ -87,9 +87,7 @@ public class Q19_DeleteEveryNNodes {
         if (temp != null) {
             temp.next = null;
         }
-
         return head;
-
     }
 
 
@@ -97,7 +95,8 @@ public class Q19_DeleteEveryNNodes {
     // Main Method
     public static void main(String[] args) {
 
-        // insert node at ith position
+        // delete every m nodes after n nodes
+        // eg: 4 1 7 8 2 3 9, m = 2 (4, 1) now delete n = 3 (7, 8, 2) and continue this process till end
         Node<Integer> head = takeInput();
         printNode(head);
         head = deleteEveryNNodes(head, 2, 3);
