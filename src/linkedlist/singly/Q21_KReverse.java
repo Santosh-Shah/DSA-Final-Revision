@@ -74,7 +74,6 @@ public class Q21_KReverse {
         }
 
         return prev;
-
     }
 
 
@@ -84,7 +83,7 @@ public class Q21_KReverse {
         // insert node at ith position
         Node<Integer> head = takeInput();
         printNode(head);
-        head = reverseKNodes(head, 2);
+        head = reverseKNodes(head, 3);
         System.out.println();
         printNode(head);
 
