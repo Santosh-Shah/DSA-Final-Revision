@@ -78,7 +78,6 @@ public class Q22_BubbleSort {
                 }
             }
         }
-
         return head;
     }
 

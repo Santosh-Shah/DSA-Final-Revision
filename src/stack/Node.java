@@ -1,7 +1,7 @@
 package stack;
 
 public class Node<T> {
-    // This will store generic type of data
+    // This will store a generic type of data
     T data;
     Node<T> next;
     Node(T data) {
