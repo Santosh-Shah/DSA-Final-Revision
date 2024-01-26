@@ -14,7 +14,7 @@ public class StackUsingArray {
         topIndex = -1;
     }
 
-    // method to check size of stack
+    // method to check the size of stack
     public int size() {                                 // T(n) = O(1)
         return topIndex + 1;
     }
