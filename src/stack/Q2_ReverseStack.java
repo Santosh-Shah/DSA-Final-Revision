@@ -20,7 +20,7 @@ public class Q2_ReverseStack {
         // last that I have putting on the top of
             input.push(lastElem);
 
-        // now taking all element from extra stack into input stack
+        // now taking all elements from extra stack into input stack
         while (!extra.isEmpty()) {
             int top = extra.pop();
             input.push(top);
