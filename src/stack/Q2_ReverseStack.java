@@ -12,12 +12,12 @@ public class Q2_ReverseStack {
         int lastElem = input.pop();
         reverseStack(input, extra);
 
-        // taking all element of input stack and putting into extra stack
+        // taking all elements of input stack and putting into extra stack
         while (!input.isEmpty()) {
             int top = input.pop();
             extra.push(top);
         }
-        // last that i have putting on the top of
+        // last that I have putting on the top of
             input.push(lastElem);
 
         // now taking all element from extra stack into input stack
