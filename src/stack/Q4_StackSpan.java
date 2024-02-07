@@ -29,8 +29,8 @@ public class Q4_StackSpan {
 
 
     public static void main(String[] args) {
-//        int[] arr = {100, 80, 60, 70, 60, 75, 85};
-        int[] arr = {60, 70, 80, 100, 90, 75, 80, 120};
+        int[] arr = {100, 80, 60, 70, 60, 75, 85};
+//        int[] arr = {60, 70, 80, 100, 90, 75, 80, 120};
         arr = stackSpan(arr);
 
         for (int ans : arr) {
