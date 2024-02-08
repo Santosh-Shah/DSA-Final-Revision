@@ -21,7 +21,7 @@ public class QueueUsingTwoStacks<T> {
         return st1.isEmpty();
     }
 
-    // method to return top element
+    // method to return a top element
     public T front() {
         while (!st1.isEmpty()) {
             st2.push(st1.pop());
