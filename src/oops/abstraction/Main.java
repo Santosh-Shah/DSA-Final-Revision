@@ -17,9 +17,14 @@ public class Main {
 //        Cat cat = new Cat("Pisu");
 //        System.out.println(cat.getName());
 //        cat.animalSound();
-        CalculateAnythingImpl calculate = new CalculateAnythingImpl();
-        System.out.println(calculate.addition(4, 10));
-        System.out.println(calculate.subtract(40, 10));
-        System.out.println(calculate.multiply(4, 10));
+//        CalculateAnythingImpl calculate = new CalculateAnythingImpl();
+//        System.out.println(calculate.addition(4, 10));
+//        System.out.println(calculate.subtract(40, 10));
+//        System.out.println(calculate.multiply(4, 10));
+
+        System.out.println("Santosh");
+        for (String arg : args) {
+            System.out.println(arg);
+        }
     }
 }
